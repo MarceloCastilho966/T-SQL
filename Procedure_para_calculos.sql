@@ -1,0 +1,18 @@
+-- Calculo automático de Idade --
+CREATE PROCEDURE CalculaIdade
+AS
+BEGIN
+	UPDATE [TABELA DE CLIENTES] SET IDADE = DATEDIFF(YEAR, [DATA DE NASCIMENTO], GETDATE()) 
+END
+
+INSERT INTO [TABELA DE CLIENTES] (CPF, NOME, [ENDERECO 1], BAIRRO, CIDADE, ESTADO, CEP,
+[DATA DE NASCIMENTO], SEXO, [LIMITE DE CREDITO], [VOLUME DE COMPRA], [PRIMEIRA COMPRA])
+VALUES
+('123123123', 'João Machado', 'Rua Projetada A', 'Madureira', 'Rio de Janeiro', 'RJ', '20000',
+'20000306', 'M', 120000, 120000, 120000)
+
+SELECT * FROM [TABELA DE CLIENTES] tdc WHERE CPF = '123123123'
+-- Não foi feita a inserção da Idade
+
+EXEC CalculaIdade
+-- Agora a Idade é Inserida automáticamente
