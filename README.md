@@ -1,2 +1,2 @@
 # T-SQL
-SQL Server: T-SQL com Microsoft SQL Server 2017
+ALURA - SQL Server: T-SQL com Microsoft SQL Server 2017
